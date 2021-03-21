@@ -1,13 +1,13 @@
 package com.chinmay.java8lambda;
 
-public class Greeter {
+public class GreeterLambda {
 	
 	public void greet(GreetingIF greeting) {
 		greeting.performAction();
 	}
 	
 	public static void main (String[] args) {
-		Greeter greeter = new Greeter();
+		GreeterLambda greeter = new GreeterLambda();
 		/**
 		 * HOW TO Convert a standard function into a Lambda Expression
 		 * ----------------------------------------------------------- 
