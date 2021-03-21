@@ -68,6 +68,20 @@ public class GreeterLambda {
 		lambdaGreeting.performAction();
 		innerClassGreeting.performAction();
 		
+		/**
+		 * Multiple ways to execute a lambda expression:
+		 * Hint: Use the lambda variable as if it were an implementation of the interface (lambda var type)
+		 * All of the below lines will result in the same.
+		 * 
+		 * greeter.greet(lambdaGreeting);
+		 * lambdaGreeting.performAction(); // "performAction()" method name can be anything
+		 * greeter.greet(() -> System.out.println("Welcome Chinmay! - from lambda")); // Using directly the body of the lambda func
+		 * 
+		 * Java compiler automatically infers the type from the method body - called "Type Inference".
+		 * 		Java compiler can infer the return tupe as well as the parameter types by looking at the interface the lambda is implementing.
+		 * 		So we can omit the parameter type as well, in the lambda expression.
+		 */
+		
 		//So Lambda functions is just an implementation of the method without any instantiation of the class.
 	}
 }

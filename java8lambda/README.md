@@ -10,6 +10,8 @@
 * Readable and concise code
 * Easier-to-use APIs and libraries
 * Enables support for parallel processing
+* Lambda works Java8 onwards.
+
 
 ##### Functional vs OOP
 * Both can achieve the same
@@ -18,7 +20,25 @@
 * In OOP all code blocks are "associated" with classes and objects.
 
 ##### How to execute a Lambda Expression
-* Call the interface method on the lambda variable, as if it were instance of a class.
+	* Call the interface method on the lambda variable, as if it were instance of a class.
+	* ------------------------------------------------
+	* Java compiler automatically infers the type from the method body - called "Type Inference".
+	* 	Java compiler can infer the return type as well as the parameter types by looking at the interface the lambda is implementing.
+	* 	So we can omit the parameter type as well, in the lambda expression.
+	*   * If there is only one parameter then we can omit the parenthesis surrounding the parameter of lambda function (RHS).
+	* All 3 Below expressions are same:
+	* 	StringLengthIF myLambda = (String s) -> {return s.length();};
+	* 	StringLengthIF myLambda = (String s) -> s.length();
+	* 	StringLengthIF myLambda = (s) -> s.length();
+	* 
+	* Multiple ways to execute a lambda expression:
+	* ------------------------
+	* Hint: Use the lambda variable as if it were an implementation of the interface (lambda var type)
+	* All of the below lines will result in the same.
+	* 	greeter.greet(lambdaGreeting);
+	* 	lambdaGreeting.performAction(); // "performAction()" method name can be anything
+	* 	greeter.greet(() -> System.out.println("Welcome Chinmay! - from lambda")); // Using directly the body of the lambda func
+	* Any method that takes the interface defined for lambda as argument can also take the lambda variable in the expression
 
 ##### How to convert a normal function into an Lambda function Expression and how to execute it (with example)
 	 * HOW TO Convert a standard function into a Lambda Function
@@ -63,5 +83,4 @@
 	 *  B & C are similar Lambda expression is just a fancy new shortcut in Java8 to represent anonymous inner classes.
 	 *  But there are some difference. 
 	 * 
-	 * This works Java8 onwards.
 	 
