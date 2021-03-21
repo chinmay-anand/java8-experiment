@@ -17,8 +17,11 @@
 * Functional programming is elegant in certain situatio, but not always. We may need to use Object oriented programming in some other cases.
 * In OOP all code blocks are "associated" with classes and objects.
 
-##### How to convert a normal function into an Lambda Expression
-	 * HOW TO Convert a standard function into a Lambda Expression
+##### How to execute a Lambda Expression
+* Call the interface method on the lambda variable, as if it were instance of a class.
+
+##### How to convert a normal function into an Lambda function Expression and how to execute it (with example)
+	 * HOW TO Convert a standard function into a Lambda Function
 	 * ----------------------------------------------------------- 
 	 * 
 	 * SUMMARY:
@@ -33,7 +36,7 @@
 	 * In "Lambda Expression we use a function as a value.
 	 * i.e. we assign a function body to a variable and will call that vaiable later to invoke the function assigned to it.
 	 * 	While assigning we 
-	 * 		trim out the func access specifier (public, private etc, are meaningful in a class, but not useful when the cunc is used standalone way), 
+	 * 		trim out the func access specifier (public, private etc, are meaningful in a class, but not useful when the func is used standalone way), 
 	 * 		remove the func name (func name is not needed, we will call the method by the assigned variable on left side of the lambda expression), 
 	 * 		get rid of return type which is not neededas java compiler finds out the return type from the func body.
 	 * Finally add an arrow between the parameters and func body.
@@ -61,3 +64,4 @@
 	 *  But there are some difference. 
 	 * 
 	 * This works Java8 onwards.
+	 
