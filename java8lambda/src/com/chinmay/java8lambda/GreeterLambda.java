@@ -44,7 +44,8 @@ public class GreeterLambda {
 		 * 
 		 * This works Java8 onwards.
 		 */
-		//MyAdd addExpr = (int n1, int n2) -> n1+n2; 
+		MyAdd addExpr = (int n1, int n2) -> n1+n2;
+		System.out.println(addExpr.bar(2,3)+": Result from MyAdd");
 		//lambdaGreeting = public void performAction() { System.out.println("Welcome Chinmay!"); }
 		//MyLambda lambdaGreeting = () -> System.out.println("Welcome Chinmay Anand!");
 		
@@ -87,9 +88,17 @@ public class GreeterLambda {
 }
 
 /**
- * Functional interface -- A special interfaces with exactly one abstract method can be used as lambda variable type.
- * Additional methods if needed must not be abstract i.e. whould have body and those must be declared either "default" or "static"
- * The lone abstract method is used for lambda expression type.
+ * Functional interface -- A special interfaces with 
+ * 		exactly one abstract method can be used as lambda variable type.
+ * 		Additional methods if needed must not be abstract i.e. should have body
+ * 		The non-abstract methods must be declared either "default" or "static"
+ * Implementation of Functional Interface:
+ * 		The lone abstract method is used for lambda expression type, and lambda variable can eb used like an implementation class.
+ * 		Any implementation class of the interface may choose to @override the non-abstract methods.
+ * 		The static method scan not be overriden but can be defined in the implementer and treated as a new method.  
+ * 
+ * Prior to Java 8 interfaces were allowed to have only the abstract method (all abstract method declarations).
+ * In Java8 onwards we need to have at least one abstract method and rest methods can have "default" implementations
  * 
  * To use with lambda expression the interface name or the lone abstract method name is immaterial.
  * Only condition is that the lone abstrat method in the interface must match with the lambda expression method.
@@ -103,4 +112,10 @@ public class GreeterLambda {
 interface MyLambda { 
 	void foo();
 }
-interface MyAdd { int bar(int a, int b); }
+
+@FunctionalInterface
+interface MyAdd { 
+	int bar(int a, int b); 
+	default int bar1(int a, int b, int c) {return -1;} 
+	static int bar2(int a, int b, String s) {return -2;}
+}

@@ -12,12 +12,23 @@
 * Enables support for parallel processing
 * Lambda works Java8 onwards.
 
-
 ##### Functional vs OOP
 * Both can achieve the same
 * Functional programmign gives a more readable and hence more maintainable code.
 * Functional programming is elegant in certain situatio, but not always. We may need to use Object oriented programming in some other cases.
 * In OOP all code blocks are "associated" with classes and objects.
+
+##### Functional Interface
+	 * Functional interface -- A special interfaces with 
+	 * 		exactly one abstract method can be used as lambda variable type.
+	 * 		Additional methods if needed must not be abstract i.e. should have body
+	 * 		The non-abstract methods must be declared either "default" or "static"
+	 * 	Annotate the interface with "@FunctionalInterface" (from java.lang) to enforce compile time checking to ensure that there is exactly one abstract method.
+	 * 	This is not needed by compiler to identify lambda interface, but it is a good practice to prevent accidental errors from other developers preventing the addition of other abstract methods.
+	 * Implementation of Functional Interface:
+	 * 		The lone abstract method is used for lambda expression type, and lambda variable can eb used like an implementation class.
+	 * 		Any implementation class of the interface may choose to @override the non-abstract methods.
+	 * 		The static method scan not be overriden but can be defined in the implementer and treated as a new method.  
 
 ##### How to execute a Lambda Expression
 	* Call the interface method on the lambda variable, as if it were instance of a class.
