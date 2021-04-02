@@ -1,4 +1,5 @@
 # Contents of "java8lambda" project
+* Stream API: Refer "src/com/chinmay/java8lambda/"
 * Using Lambdas
 * Functional Interfaces
 * Method references
