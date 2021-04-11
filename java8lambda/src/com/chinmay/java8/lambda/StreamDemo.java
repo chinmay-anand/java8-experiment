@@ -1,4 +1,4 @@
-package com.chinmay.java8lambda;
+package com.chinmay.java8.lambda;
 
 import java.util.Arrays;
 import java.util.Comparator;
