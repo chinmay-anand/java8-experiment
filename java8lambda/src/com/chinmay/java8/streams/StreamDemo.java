@@ -17,13 +17,13 @@ public class StreamDemo {
 	 *  
 	 *  * Examples:
 	 *  * Intermediate Operations:
-	 *  *	"map" -- Returns a stream of converted elements applied with the method passed as parameter to "map"
-	 *  *	"filter" -- Returns a stream of subset of input elements mathcing th epassed in criteria
-	 *  *	"sorted" -- Returns the input elements sorted by the argument passed.
+	 *  *	"map" -- Returns a stream of converted elements each applied with the method passed as parameter to "map"
+	 *  *	"filter" -- Returns a stream of subset of input elements matching the passed in criteria.
+	 *  *	"sorted" -- Returns the input elements sorted using the sorting method passed in argument. Default is ascending order of input list. "Comparator.reverseOrder()" causes the sorting in descending order.
 	 *  * Terminal Operations:
 	 *  *	"collect" -- Returns the collection by converting the input stream back to the original type from which stream was initiated.
 	 *  			Collectors.toList() returns in form of a list and .toSet() returns a set which is the unique values from the list
-	 *  			"collect" takes one of these as parameter.
+	 *  			"collect" takes one of these as parameter [.toList()/.toSet()].
 	 *  *	"forEach" -- Operates on each element of the input stream.
 	 *  *	"reduce" -- Applies the passed-in method to the input stream and returns the result. 
 	 *  
@@ -56,7 +56,8 @@ public class StreamDemo {
 		List<String> resNames = names.stream().filter(s->s.startsWith("A")).collect(Collectors.toList());
 		System.out.println(resNames);
 		System.out.println("Printing strings starting with A or C (uses regex)");
-		resNames = names.stream().filter(s->s.matches("("+"A"+"|"+"C"+").*")).collect(Collectors.toList());
+		//resNames = names.stream().filter(s->s.matches("("+"A"+"|"+"C"+").*")).collect(Collectors.toList());
+		resNames = names.stream().filter(s->s.matches("(A|C).*")).collect(Collectors.toList());
 		System.out.println(resNames);
 	}
 
